@@ -1,16 +1,35 @@
-# React + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site for Arvinder Mundra: experience, education, skills and projects on a single page.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm ci
+npm run dev      # http://localhost:5173
+npm run build    # production build in dist/
+```
 
-## React Compiler
+Requires Node.js 20 or newer.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project structure
 
-## Expanding the ESLint configuration
+```
+index.html
+src/
+  App.jsx              page layout
+  components/          one component per section (Hero, About, Experience,
+                       Education, Skills, Projects, Leadership, Contact, Footer)
+  index.css, App.css   global styles; each component has its own CSS module
+vercel.json            single-page rewrite rule for Vercel
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Project cards are defined in `src/components/Projects.jsx`. Each card links to a public repository.
+
+## Tech stack
+
+JavaScript, React 19, Vite, Framer Motion, CSS modules. Deployed on Vercel.
+
+## Author
+
+Arvinder Mundra · [LinkedIn](https://www.linkedin.com/in/arvinder-mundraa) · [GitHub](https://github.com/arvindermundraa)
