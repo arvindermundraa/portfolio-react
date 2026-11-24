@@ -10,68 +10,46 @@ const GITHUB_SVG = (
 
 const projects = [
   {
-    cat: 'ml',
-    title: 'Yelp Sentiment Classifier',
-    gh: 'https://github.com/arvindermundra/yelp-sentiment-analysis',
+    cat: 'de',
+    title: 'Hospital Ward Epidemic Control (Network Analysis)',
+    gh: 'https://github.com/arvindermundraa/STAT636-Group17-hospital-centrality',
     bullets: [
-      'BiLSTM in PyTorch with Word2Vec embeddings for multi-class sentiment',
-      'Outperformed TF-IDF + Logistic Regression baseline on F1 score',
-      'Positive / neutral / negative classification pipeline',
+      'Team project (STAT 636): compared degree, betweenness, eigenvector and harmonic centrality for choosing who to isolate',
+      'Weighted SIR simulations on a 75-person hospital contact network; every table reproduces from one R script',
+      'With 10 people isolated, attack rate fell from 17.5% (random) to 4.8-7.0% at low transmission',
     ],
-    chips: ['Python', 'PyTorch', 'BiLSTM', 'NLP', 'Word2Vec'],
+    chips: ['R', 'igraph', 'Network Analysis', 'Simulation'],
+  },
+  {
+    cat: 'ml',
+    title: 'Yelp Review Rating Classifier',
+    gh: 'https://github.com/arvindermundraa/yelp-sentiment-analysis',
+    bullets: [
+      'Team project (ECEN 758): 5-class star rating prediction from review text',
+      'BiLSTM vs CNN-BiLSTM in PyTorch with Optuna hyperparameter tuning',
+      'BiLSTM reached 67.62% test accuracy on 50,000 held-out reviews; CNN-BiLSTM 66.68%',
+    ],
+    chips: ['Python', 'PyTorch', 'BiLSTM', 'NLP', 'Optuna'],
   },
   {
     cat: 'ml',
     title: 'LSTM Stock Price Prediction',
-    gh: 'https://github.com/arvindermundra/LSTM-Based-Stock-Price-Prediction',
+    gh: 'https://github.com/arvindermundraa/LSTM-Based-Stock-Price-Prediction',
     bullets: [
-      'Stacked LSTM in PyTorch for time-series stock forecasting',
-      'Feature engineering: RSI, MACD, moving averages',
-      'Forecast vs actual overlays with confidence intervals',
+      'Team project (STAT 656): next-day AAPL close from a 30-day window',
+      'Single-layer baseline vs 5-layer stacked LSTM in PyTorch, chronological 80/10/10 split',
+      'Stacked model cut test MAE from $24.45 to $18.44',
     ],
     chips: ['Python', 'PyTorch', 'LSTM', 'Pandas', 'NumPy'],
   },
   {
-    cat: 'fullstack',
-    title: 'Secure Interactive Banking Platform',
-    gh: 'https://github.com/arvindermundra1208',
-    bullets: [
-      'Angular frontend + Java/Spring Boot backend, multi-tier architecture',
-      'Spring Security RBAC, encrypted data, session management',
-      'PostgreSQL for high-concurrency transaction handling',
-    ],
-    chips: ['Angular', 'Spring Boot', 'Java', 'PostgreSQL', 'REST APIs'],
-  },
-  {
-    cat: 'fullstack',
-    title: 'Enterprise Inventory & Backend System',
-    gh: 'https://github.com/arvindermundra1208',
-    bullets: [
-      'Relational database redesign for a simulated 1M+ transaction-row engine with advanced indexing & partitioning',
-      'PL/SQL stored procedures and triggers for real-time inventory sync — reduced transaction latency by 80%',
-      'Optimized physical schema layers and partition keys for high-throughput ETL batch jobs',
-    ],
-    chips: ['Oracle SQL', 'PL/SQL', 'ETL', 'Partitioning', 'Stored Procedures'],
-  },
-  {
-    cat: 'de',
-    title: 'Time-Series Big Data Pipeline',
-    gh: 'https://github.com/arvindermundra1208',
-    bullets: [
-      'Ingested 10+ years of raw historical equity price data using Python and PySpark',
-      'Built cleaning, normalization, and feature engineering pipelines producing analytics-ready datasets',
-      'Applied data quality checks and schema validation across rolling feature windows for reliable downstream modeling',
-    ],
-    chips: ['Python', 'PySpark', 'Apache Spark', 'Pandas', 'Feature Engineering', 'Data Quality'],
-  },
-  {
     cat: 'ml',
-    title: 'Customer Segmentation Engine',
-    gh: 'https://github.com/arvindermundra/customer-segmentation',
+    title: 'Customer Segmentation',
+    gh: 'https://github.com/arvindermundraa/customer-segmentation',
     bullets: [
-      'K-Means + DBSCAN on RFM-engineered features',
-      'PCA and t-SNE for cluster visualization',
-      'Identified high-value customer segments for revenue targeting',
+      'RFM and behavioural features for 4,306 customers from 541,909 retail transactions',
+      'PCA to 4 components (93.59% of variance), then K-Means, hierarchical clustering and DBSCAN',
+      'K-Means with k=3 selected; a classifier recovered the segments with 99.65% test accuracy',
     ],
     chips: ['Python', 'Scikit-Learn', 'K-Means', 'PCA', 'Matplotlib'],
   },
@@ -79,9 +57,8 @@ const projects = [
 
 const FILTERS = [
   { key: 'all', label: 'All' },
-  { key: 'fullstack', label: 'Full-Stack' },
-  { key: 'ml', label: 'Machine Learning' },
-  { key: 'de', label: 'Data Engineering' },
+    { key: 'ml', label: 'Machine Learning' },
+  { key: 'de', label: 'Data & Statistics' },
 ]
 
 export default function Projects() {
@@ -118,7 +95,7 @@ export default function Projects() {
               <div className={`card ${styles.card}`}>
                 <div className={styles.head}>
                   <span className={`${styles.badge} ${p.cat === 'ml' ? styles.badgeMl : p.cat === 'de' ? styles.badgeDe : styles.badgeFs}`}>
-                    {p.cat === 'ml' ? 'Machine Learning' : p.cat === 'de' ? 'Data Engineering' : 'Full-Stack'}
+                    {p.cat === 'ml' ? 'Machine Learning' : p.cat === 'de' ? 'Data & Statistics' : 'Full-Stack'}
                   </span>
                   <a href={p.gh} target="_blank" rel="noopener noreferrer" className={styles.ghLink} aria-label="GitHub">
                     {GITHUB_SVG}
