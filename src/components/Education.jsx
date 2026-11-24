@@ -6,7 +6,7 @@ const schools = [
     school: 'Texas A&M University',
     degree: 'Master of Science in Data Science',
     location: 'College Station, TX',
-    date: 'Aug 2025 – May 2027',
+    date: 'Aug 2025 – Dec 2026',
     courses: 'ECEN 758 (Data Mining), MATH 677 (Math Foundations of DS), STAT 624 (Big Data Tools), STAT 650 (Statistical Foundations), CSCE 625 (AI), STAT 654 (Statistical Computing), STAT 656 (Applied Analytics)',
   },
   {
